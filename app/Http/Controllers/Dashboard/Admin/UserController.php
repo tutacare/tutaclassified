@@ -102,6 +102,16 @@ class UserController extends Controller
      */
     public function update(UserPanelRequest $request, $id)
     {
+
+if($id == 1)
+    {
+      Session::flash('message', 'You cannot edit admin on demo');
+      Session::flash('alert-class', 'alert-danger');
+              return Redirect::to('dashboard/admin/user');
+    }
+    else
+    { 
+
       $user = User::findOrFail($id);
       $user->name = $request->name;
       $user->email = $request->email;
@@ -133,6 +143,7 @@ class UserController extends Controller
         $user->save();
         Session::flash('message', 'Mengganti Data Pengguna sukses!');
         return Redirect::to('dashboard/admin/user');
+        }
     }
 
     /**
@@ -143,11 +154,20 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+      if($id == 1)
+    {
+      Session::flash('message', 'You cannot edit admin on demo');
+      Session::flash('alert-class', 'alert-danger');
+              return Redirect::to('dashboard/admin/user');
+    }
+    else
+    { 
       $user = User::find($id);
       $user->delete();
       Session::flash('message', 'Menghapus Pengguna Sukses');
       return Redirect::to('dashboard/admin/user');
     }
+  }
 
     public function getData(Request $request)
     {
