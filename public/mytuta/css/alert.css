@@ -1,0 +1,32 @@
+.tutaalert {
+ position:fixed;
+ right: 30px;
+ bottom: 30px;
+ width: 600px;
+ z-index: 2147483647;
+ color: #ffffff;
+ background-color: #0074D9;
+ border-color: #bce8f1;
+}
+.closet {
+float: right;
+font-size: 21px;
+font-weight: bold;
+line-height: 1;
+color: #fff;
+text-shadow: 0 1px 0 #fff;
+
+}
+.closet:hover,
+.closet:focus {
+color: #fff;
+text-decoration: none;
+cursor: pointer;
+}
+button.closet {
+-webkit-appearance: none;
+padding: 0;
+cursor: pointer;
+background: transparent;
+border: 0;
+}

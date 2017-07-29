@@ -1,0 +1,8 @@
+*
+!public/
+!.gitignore
+!user/
+!user/no-foto.png
+!category/
+!category/tmp*.jpg
+!product/
